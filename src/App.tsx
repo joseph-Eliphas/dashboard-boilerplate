@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import { ThemeProvider } from 'react-bootstrap';
+import API from './services/api.services';
+import Layout from './layout';
+import UnauthRoutes from './unauthpages/unauth.routes';
 
 function App() {
+  const api = new API();
+
+  const isAuthenticated = true;
+
+  const onLoad = async () => {
+    let response = await api.login('Joe', '01011000');
+    console.log(response);
+  }
+
+  useEffect(() => { onLoad() })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider
+        breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+        minBreakpoint="xxs"
+      >
+        {
+          (isAuthenticated) ? (<Layout />) : (<UnauthRoutes />)
+        }
+      </ThemeProvider>
     </div>
   );
 }
