@@ -4,12 +4,12 @@ const Navigation = () => {
     return [
         {
             name: 'Dashboard',
-            link: '/dashboard',
+            link: '/',
             icon: <MdDashboard size={19}/>,
         },
         {
-            name: 'Dashboard',
-            link: '/dashboard',
+            name: 'Profile',
+            link: '/profile',
             icon: <MdCategory size={19}/>,
         }
     ]

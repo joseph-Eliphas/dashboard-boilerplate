@@ -1,0 +1,29 @@
+.custom-card{
+    /* min-height: 100%; */
+    min-width: fit-content;
+    padding: 25px 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(54, 54, 54, 0.212);
+    /* background-color:  rgb(34, 34, 34); */
+}
+
+.summary{
+    width: 200px;
+    max-width: 200px;
+    min-width: fit-content;
+    height: 100px;
+    background-color: rgb(38, 38, 38);
+    border-radius: 10px;
+}
+
+.summary small {
+    color: rgb(186, 186, 186);
+}
+
+.chart{
+    border-radius: 10px;
+}
+
+.fg-color-custom{
+    background-color: rgb(38, 38, 38);
+}

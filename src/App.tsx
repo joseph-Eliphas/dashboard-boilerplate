@@ -4,6 +4,8 @@ import { ThemeProvider } from 'react-bootstrap';
 import API from './services/api.services';
 import Layout from './layout';
 import UnauthRoutes from './unauthpages/unauth.routes';
+import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 function App() {
   const api = new API();
@@ -19,14 +21,19 @@ function App() {
 
   return (
     <div className="App">
-      <ThemeProvider
-        breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
-        minBreakpoint="xxs"
-      >
-        {
-          (isAuthenticated) ? (<Layout />) : (<UnauthRoutes />)
-        }
-      </ThemeProvider>
+      <RecoilRoot>
+        <ThemeProvider
+          breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+          minBreakpoint="xxs"
+        >
+          <BrowserRouter>
+            {
+              (isAuthenticated) ? (<Layout />) : (<UnauthRoutes />)
+            }
+          </BrowserRouter>
+
+        </ThemeProvider>
+      </RecoilRoot>
     </div>
   );
 }
