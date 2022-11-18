@@ -3,8 +3,9 @@
     min-width: fit-content;
     padding: 25px 25px;
     border-radius: 10px;
-    border: 1px solid rgba(54, 54, 54, 0.212);
-    /* background-color:  rgb(34, 34, 34); */
+    border: 1px solid var(--backgroundColor);
+    background-color:  var(--backgroundLightColor);
+    color: var(--textColor);
 }
 
 .summary{
@@ -12,7 +13,8 @@
     max-width: 200px;
     min-width: fit-content;
     height: 100px;
-    background-color: rgb(38, 38, 38);
+    background-color: var(--widgetContainerColor);
+    border: 1px solid var(--backgroundDimmerColor);
     border-radius: 10px;
 }
 
@@ -25,5 +27,15 @@
 }
 
 .fg-color-custom{
-    background-color: rgb(38, 38, 38);
+    background-color: var(--widgetContainerColor);
+}
+
+.table-container{
+    background-color:  var(--widgetContainerColor)!important;
+    padding: 10px;
+}
+.table{
+    background-color:  var(--widgetContainerColor);
+    color: white!important;
+    border-color: var(--backgroundLightColor);
 }

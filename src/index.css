@@ -1,39 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-:root {
-  --primaryColor  : blue;
-  --secondaryColor: rgb(154, 154, 154);
+::root {
+  --backgroundDimmerColor: rgb(52 52, 52);
+  --backgroundLightColor : rgb(29, 29, 29);
+  --backgroundColor      : rgb(19, 19, 19);
+  --iconColor            : white;
+  --textColor            : white;
+  --textLightColor       : white;
+  --widgetContainerColor : rgb(38, 38, 38);
 }
 
-::-webkit-scrollbar{
-  width: 10px;
-  background-color: rgb(29, 29, 29);
+.dark {
+  --backgroundDimmerColor: rgb(52 52, 52);
+  --backgroundLightColor : rgb(29, 29, 29);
+  --backgroundColor      : rgb(19, 19, 19);
+  --iconColor            : white;
+  --textColor            : white;
+  --textLightColor       : rgb(160, 160, 160);
+  --widgetContainerColor : rgb(38, 38, 38);
 }
 
-::-webkit-scrollbar-thumb{
-  background-color: rgb(92, 92, 92);
+.light {
+  --backgroundDimmerColor: rgb(237, 237, 237);
+  --backgroundLightColor : rgb(252, 252, 252);
+  --backgroundColor      : rgb(235, 235, 235);
+  --iconColor            : rgb(38, 38, 38);
+  --textColor            : rgb(26, 26, 26);
+  --textLightColor       : rgb(160, 160, 160);
+  --widgetContainerColor : rgb(245, 245, 245);
+}
+
+::-webkit-scrollbar {
+  width           : 10px;
+  background-color: var(--backgroundColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--textLightColor);
 }
 
 body {
   height                 : 100vh;
   width                  : 100vw;
   margin                 : 0;
-  font-family            : 'Montserrat', sans-serif;
+  font-family            : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(34, 34, 34);
-  overflow: hidden;
+  background-color       : var(--backgroundColor);
+  overflow               : hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  /* font-family: 'IBM Plex Sans', sans-serif; */
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 
-#root{
+#root {
   height: 100vh;
 }
 
-.vertical-scroll{
+.vertical-scroll {
   overflow-y: scroll;
 }

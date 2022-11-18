@@ -6,33 +6,46 @@ import Dashboard from "./pages/dashboard";
 import CustomCard from "./components/card";
 import Profile from "./pages/profile";
 import Settings from "./pages/settings";
+import Navigation from "./services/navigation.links";
+import ModelsContext from "./components/models";
 
 const Layout = () => {
+
+    const navigations = Navigation();
+
     return (
-        <div className="main w-100 text-light h-100 d-flex">
+        <ModelsContext>
+            <div className="main w-100 text-light h-100 d-flex">
 
-            <SideNav />
+                <SideNav />
 
-            <div className="main-space w-100 d-flex flex-column vertical-scroll">
+                <div className="main-space w-100 d-flex flex-column vertical-scroll">
 
-                <Appbar />
+                    <Appbar />
 
-                <CustomCard>
-                    
-                    <Routes>
-                        <Route path="/" element={<Dashboard />} />
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="/profile" element={<Profile />} />
-                        <Route path="/settings" element={<Settings />} />
-                    </Routes>
-                    
-                </CustomCard>
+                    <div className="main-work-space">
+                        <CustomCard>
 
-                <Footer />
+                            <Routes>
+                                {
+                                    navigations.map((nav, index) => {
+                                        let Component: any = nav.component;
+                                        return (<Route path={nav.link} key={nav.link} element={<Component />} />)
+                                    })
+                                }
+                                <Route path="/profile" element={<Profile />} />
+                                <Route path="/settings" element={<Settings />} />
+                            </Routes>
+
+                        </CustomCard>
+                    </div>
+
+                    <Footer />
+
+                </div>
 
             </div>
-
-        </div>
+        </ModelsContext>
     );
 }
 

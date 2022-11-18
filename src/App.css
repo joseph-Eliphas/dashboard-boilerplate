@@ -1,50 +1,73 @@
 .App {
   text-align: center;
-  height: 100%;
+  height    : 100%;
 }
 
-nav.side{
-  width: 70px;
-  min-width: 70px;
-  background-color: rgb(29, 29, 29);
-  border-right: 1px solid rgba(220, 220, 220, 0.101);
-  transition: 0.25s all cubic-bezier(1,0,0,1);
+nav.side {
+  width           : 70px;
+  min-width       : 70px;
+  background-color: var(--backgroundLightColor);
+  border-right    : 1px solid rgba(220, 220, 220, 0.101);
+  transition      : 0.25s all cubic-bezier(1, 0, 0, 1);
 }
 
-nav.side.active{
-  width: 160px;
+nav.side.active {
+  width    : 160px;
   min-width: 160px;
 }
 
-nav.side .logo{
-  height: 65px;
-  border-bottom: 1px solid rgba(53, 53, 53, 0.342);
-}
-.main-space{
-  position: relative;
-  background-color: rgb(19, 19, 19);
+nav.side .logo {
+  height       : 65px;
+  border-bottom: 1px solid var(--backgroundDimmerColor);
 }
 
-.appbar{
-  height: 70px;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  flex: none;
-  background-color: rgb(29, 29, 29);
+.summary-section {
+  border-bottom: 1px solid var(--backgroundDimmerColor) !important;
+}
+
+.active-link {
+  background-color: blue;
+}
+
+.navigation .nav-button {
+  color: var(--iconColor) !important;
+}
+
+.nav-button.active {
+  color           : var(--backgroundColor) !important;
+  background-color: var(--iconColor) !important;
+}
+
+.main-space {
+  position        : relative;
+  background-color: var(--backgroundColor);
+}
+
+.main-work-space{
+  height          : 90%;
+}
+
+.appbar {
+  height          : 70px;
+  width           : 100%;
+  position        : sticky;
+  top             : 0;
+  flex            : none;
+  background-color: var(--backgroundLightColor);
+  z-index         : 1;
 }
 
 
-.work-space{
-  flex: none;
-  height: 100%!important;
-  /* background-color: rgb(34, 34, 34); */
-  display: flex;
-  align-items: center;
+.work-space {
+  flex           : none;
+  height         : 100% !important;
+  display        : flex;
+  align-items    : center;
   justify-content: center;
 
 }
 
-.footer{
-  background-color: rgb(47, 47, 47);
+.footer {
+  background-color: var(--backgroundLightColor);
+  color           : var(--textColor);
 }

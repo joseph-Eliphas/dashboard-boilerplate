@@ -1,4 +1,6 @@
 import { MdDashboard, MdCategory } from 'react-icons/md'
+import Dashboard from '../pages/dashboard';
+import Profile from '../pages/profile';
 
 const Navigation = () => {
     return [
@@ -6,11 +8,16 @@ const Navigation = () => {
             name: 'Dashboard',
             link: '/',
             icon: <MdDashboard size={19}/>,
+            clickable: true,
+            component: Dashboard
         },
         {
             name: 'Profile',
             link: '/profile',
             icon: <MdCategory size={19}/>,
+            clickable: true,
+            component: Profile
+
         }
     ]
 }
